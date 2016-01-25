@@ -1,0 +1,44 @@
+<div class="" style="bpadding:0 2em;">
+  <div class="row" style="">
+    <div class="col-md-12">
+      <h3 style="margin-bottom:.7em;">Your items</h3>
+    </div>
+  </div>
+
+  <div class="list-group">
+    <a class="list-group-item " href="#projects" ng-repeat="item in items | limitTo: 3" style="margin-bottom:.5em;padding-bottom:2em;border-bottom:solid #f0f0f0 1px;">
+      <div class="row">
+        <div class="col-md-2" style="padding-right:.5em;">
+          <img src="https://unsplash.it/200/200/?image={{$index + 10 * 40}}" style="max-width:100%;"></div>
+        <div class="col-md-10" style="padding-left:.5em;">
+          <h4>{{item.name}}</h4>
+          <p>{{item.description}}</p>
+        </div>
+      </div>
+    </a>
+  </div>
+
+
+  <div class="row" style="">
+    <div class="col-md-12">
+      <h3 style="margin-bottom:.7em;">Popular items</h3>
+    </div>
+  </div>
+
+  <div class="list-group">
+    <a class="list-group-item " href="#projects" ng-repeat="item in items | limitTo: 10" style="margin-bottom:.5em;padding-bottom:2em;border-bottom:solid #f0f0f0 1px;">
+      <div class="row">
+        <div class="col-md-2" style="padding-right:.5em;">
+          <img src="https://unsplash.it/200/200/?image={{$index + 10 * 40}}" style="max-width:100%;"></div>
+        <div class="col-md-10" style="padding-left:.5em;">
+          <h4>{{item.name}}</h4>
+          <p style="sfont-size:1.2em;font-weight:bold;margin:0em 0 .5em 0;">
+            <span class="glyphicon glyphicon-map-marker" style="sfont-size:1.2em;padding:0 .5em 0 0;"></span>
+            {{t.address}}
+          </p>
+          <p>{{item.description}}</p>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>

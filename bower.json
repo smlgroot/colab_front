@@ -1,0 +1,24 @@
+{
+  "name": "colab",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "latest",
+    "angular-resource": "latest",
+    "angular-ui-router": "latest",
+    "bootstrap": "latest",
+    "angular-file-upload": "latest",
+    "eonasdan-bootstrap-datetimepicker": "latest",
+    "bootstrap-tagsinput": "latest"
+  }
+}

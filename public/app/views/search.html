@@ -1,0 +1,99 @@
+<div class="row">
+  <div class="col-md-5" style="background-color:white;">
+    <div class="row" style="sbackground-color:white;height:5em;line-height:5em;smargin:0 0 2em 0;bsorder:solid #e2e2e2 1px;">
+      <h1 class="col-md-2" style="text-align:center;font-weight:bolder;sfont-size:2em;color:rgb(0, 32, 40)">Colab</h1>
+      <div class="col-md-10">
+        <md-button aria-label="Favorite" class="xmd-icon-button" flex ui-sref="profile"></md-button>
+        <md-button aria-label="Favorite" class="xmd-icon-button" flex ui-sref="projects.new"></md-button>
+        <md-button aria-label="Favorite" class="xmd-icon-button" flex ui-sref="projects"></md-button>
+      </div>
+    </div>
+    <div class="row" style="margin-top:2em;margin-bottom:2em;">
+      <div class="col-md-12">
+        <div class="input-group" style="margin-bottom:1em;">
+          <input class="form-control" placeholder="Search for..." type="text">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Go</button>
+          </span>
+        </div>
+
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="inputEmail3">Estado</label>
+            <div class="checkbox col-sm-3">
+              <label>
+                <input type="checkbox">
+                Usado
+              </label>
+            </div>
+            <div class="checkbox col-sm-3">
+              <label>
+                <input type="checkbox">
+                Nuevo
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="inputEmail3">Entrega</label>
+            <div class="checkbox col-sm-3">
+              <label>
+                <input type="checkbox">
+                En persona
+              </label>
+            </div>
+            <div class="checkbox col-sm-3">
+              <label>
+                <input type="checkbox">
+                Paqueteria
+              </label>
+            </div>
+            <div class="checkbox col-sm-4">
+              <label>
+                <input type="checkbox">
+                En la casa
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="list-group">
+      <a class="list-group-item" href="#projects" ng-repeat="t in users" style="margin-bottom:.5em;padding-bottom:2em;border-bottom:solid #f0f0f0 1px;">
+        <div class="row">
+          <div class="col-md-2" style="padding-right:.5em;">
+            <img src="https://unsplash.it/200/200/?image={{$index + 10 * 40}}" style="max-width:100%;"></div>
+          <div class="col-md-10" style="padding-left:.5em;">
+            <h4>{{t.company}}</h4>
+            <p style="sfont-size:1.2em;font-weight:bold;margin:0em 0 .5em 0;">
+              <span class="glyphicon glyphicon-map-marker" style="sfont-size:1.2em;padding:0 .5em 0 0;"></span>
+              {{t.address}}
+            </p>
+            <p>{{t.words}}</p>
+            <p>
+              <img src="https://unsplash.it/500/250/?image={{$index + 1 * 100}}" style="max-width:100%;"/>
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div style="height:70em;"></div>
+  </div>
+  <div class="col-md-7">
+    <div class="row">
+      <h2 class="col-md-4" style="font-size:2em;padding: .5em 0 .5em 1.5em;">
+        <a ui-sref=".projects" style="color:inherit;cursor:pointer;text-decoration:underline;"><span style="color:#6d37b0;">25</span>
+        Projects</a>
+      </h2>
+      <h2 class="col-md-4" style="font-size:2em;padding: .5em 0 .5em 1.5em;">
+        <a ui-sref=".users" style="color:inherit;cursor:pointer;"><span style="color:#cc15cf;">2</span>
+        Users</a>
+      </h2>
+      <h2 class="col-md-4" style="font-size:2em;padding: .5em 0 .5em 1.5em;">
+        <a ui-sref=".items" style="color:inherit;cursor:pointer;"><span style="color:#1575cf;">0</span>
+        Items</a>
+      </h2>
+    </div>
+    <div ui-view="right"></div>
+
+  </div>
+</div>

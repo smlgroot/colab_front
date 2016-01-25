@@ -1,0 +1,183 @@
+<div ng-show="$state.includes('projects.new')" style="position:absolute;top:0;bottom:0;left:0;right:0;z-index:10000;background-color:white;">
+  <div ui-view=""></div>
+</div>
+
+<div class="row">
+  <div class="col-md-5" style="background-color:white;">
+    <div class="row" style="sbackground-color:white;height:5em;line-height:5em;smargin:0 0 2em 0;bsorder:solid #e2e2e2 1px;">
+      <h1 class="col-md-2" style="text-align:center;font-weight:bolder;sfont-size:2em;color:rgb(0, 32, 40)">Colab</h1>
+      <div class="col-md-10">
+        <md-button aria-label="Favorite" class="xmd-icon-button" flex ui-sref="profile"></md-button>
+        <md-button aria-label="Favorite" class="xmd-icon-button" flex ui-sref="projects.new"></md-button>
+        <md-button aria-label="Favorite" class="xmd-icon-button" flex ui-sref="projects"></md-button>
+      </div>
+    </div>
+    <div class="row" style="margin-top:2em;margin-bottom:2em;">
+      <div class="col-md-12">
+        <div class="input-group" style="margin-bottom:1em;">
+          <input class="form-control" placeholder="Search for..." type="text">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Go</button>
+          </span>
+        </div>
+
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="inputEmail3">Estado</label>
+            <div class="checkbox col-sm-3">
+              <label>
+                <input type="checkbox">
+                Usado
+              </label>
+            </div>
+            <div class="checkbox col-sm-3">
+              <label>
+                <input type="checkbox">
+                Nuevo
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="inputEmail3">Entrega</label>
+            <div class="checkbox col-sm-3">
+              <label>
+                <input type="checkbox">
+                En persona
+              </label>
+            </div>
+            <div class="checkbox col-sm-3">
+              <label>
+                <input type="checkbox">
+                Paqueteria
+              </label>
+            </div>
+            <div class="checkbox col-sm-4">
+              <label>
+                <input type="checkbox">
+                En la casa
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="list-group">
+      <a class="list-group-item" href="#projects" ng-repeat="t in users" style="margin-bottom:.5em;padding-bottom:2em;border-bottom:solid #f0f0f0 1px;">
+        <div class="row">
+          <div class="col-md-2" style="padding-right:.5em;">
+            <img src="https://unsplash.it/200/200/?image={{$index + 10 * 40}}" style="max-width:100%;"></div>
+          <div class="col-md-10" style="padding-left:.5em;">
+            <h4>{{t.company}}</h4>
+            <p style="sfont-size:1.2em;font-weight:bold;margin:0em 0 .5em 0;">
+              <span class="glyphicon glyphicon-map-marker" style="sfont-size:1.2em;padding:0 .5em 0 0;"></span>
+              {{t.address}}
+            </p>
+            <p>{{t.words}}</p>
+            <p>
+              <img src="https://unsplash.it/500/250/?image={{$index + 1 * 100}}" style="max-width:100%;"/>
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div style="height:70em;"></div>
+  </div>
+  <div class="col-md-7">
+    <div class="row">
+      <h2 class="col-md-4" style="font-size:2em;padding: .5em 0 .5em 1.5em;">
+        <span style="color:#6d37b0;">25</span>
+        Projects
+      </h2>
+      <h2 class="col-md-4" style="font-size:2em;padding: .5em 0 .5em 1.5em;">
+        <span style="color:#cc15cf;">2</span>
+        Users
+      </h2>
+      <h2 class="col-md-4" style="font-size:2em;padding: .5em 0 .5em 1.5em;">
+        <span style="color:#1575cf;">0</span>
+        Items
+      </h2>
+    </div>
+    a<div ui-view=""></div>a
+    <div class="" style="">
+
+      <div class="row" ng-repeat="p in projects track by $index" style="overflow:hidden;max-height:250px;background-color:white;margin:0 0 2em 0;">
+        <div class="col-md-6" style="padding:0">
+          <div style="max-height:250px;overflow:hidden;padding:0;position:relative;">
+            <img ng-src="https://unsplash.it/350/250/?image={{$index + 2 * 100}}" sstyle="smax-height:110%;" style="width:100%;"/>
+            <div style="position:absolute;top:50;bottom:0;left:0;right:0;padding:.5em;">
+              <p ng-repeat="msg in p.messages" style="margin: 0 0 0 0;">
+                <span style="padding:0 .5em;font-size:.85em;background-color:rgba(255,255,255,.75);sdisplay:inline;">
+                  <span style="font-weight:bolder;color:{{msg.user.color}};">{{msg.user.name}}:
+                  </span>{{msg.msg}}</span>
+              </p>
+              <div class="input-group input-group-sm" ng-show="p.showinputmsg" style="margin-top:.3em;">
+                <input class="form-control" ng-keyup="$event.keyCode == 13 && sendmsg(p)" ng-model="p.msg" placeholder="send a message ..." type="text">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" ng-click="sendmsg(p)" type="button">
+                    <span class="glyphicon glyphicon-gift" style="scolor:rgb(91, 99, 179);font-weight:bolder;"></span>
+                  </button>
+                  <button class="btn btn-default" ng-click="sendmsg(p)" type="button">go</button>
+                </span>
+              </div>
+            </div>
+            <div ng-show="!p.showinputmsg" style="position:absolute;bottom:0;right:0;">
+              <a ng-click="showInputmsg(p)">
+                <span class="glyphicon glyphicon-comment" style="font-size:1.2em;padding:0 .5em 0 0;color:white;"></span>
+              </a>
+            </div>
+            <div style="position:absolute;top:0;right:0;padding-top:.5em;">
+              <a href="#">
+                <span style="color:white;">10</span>
+                <span class="glyphicon glyphicon-gift" style="font-size:1.2em;padding:0 .5em 0 0;color:white;"></span>
+              </a><a href="#">
+                <span style="color:white;">5</span>
+                <span class="glyphicon glyphicon-heart" style="font-size:1.2em;padding:0 .5em 0 0;color:white;"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6" style="padding:0 1em 1em 1em;">
+          <h4 style="font-weight:bolder;margin-top:1em;">{{p.name}}</h4>
+          <!--p style="sline-height:2.5em;dfont-size:1.3em;smargin:0 1em 0 0;stext-align:right;">
+            <span class="glyphicon glyphicon-facetime-video" style="color:#F10C49;sfont-size:1.2em;padding:0 .5em 0 0;"></span>
+            <span class="glyphicon glyphicon-user" style="color:#A70267;fsont-size:1.2em;"></span>
+            <span style="sfont-size:1.2em;color:#A70267;display:inline-block;svertical-align:middle;">10</span>
+          </p-->
+
+          <p style="sfont-size:1.2em;font-weight:bold;margin:0em 0 .5em 0;">
+            <span class="glyphicon glyphicon-map-marker" style="sfont-size:1.2em;padding:0 .5em 0 0;"></span>
+            Insurgentes Sur 3000, Tlalpan
+          </p>
+          <p style="sfont-size:1.2em;font-weight:bold;margin:0 0 .5em 0;">
+            <span class="glyphicon glyphicon-calendar" style="sfont-size:1.2em;padding:0 .5em 0 0;"></span>
+            {{"2015-04-01" | date:'medium'}}
+          </p>
+          <div style="sheight:4em;overflow:hidden;margin:1em 0 1em 0;">
+            <span ng-repeat="t in temps | limitTo:50" style="sfont-size:1.2em;">
+              <span style="color:red;">#</span>{{t}}&nbsp;
+            </span>
+          </div>
+          <div style="sheight:4em;overflow:hidden;">
+            <p style="sfont-size:1.2em;stext-align:justify;">{{ p.description }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--div class="row">
+        <div class="col-md-12">
+
+          <div style="height:1em;position:relative;margin:1em 0 3em 0;">
+            <div style="position:absolute;left:0;right:0;top:0;bottom:0;background-color:#dfe6e9;"></div>
+            <div style="position:absolute;left:0;width:77%;top:0;bottom:0;background-color:#6d37b0;"></div>
+            <div style="position:absolute;top:1.2em;font-weight:bold;">
+              <span style="font-size:1.5em;">77%</span>
+            </div>
+          </div>
+
+        </div>
+      </div-->
+
+    </div>
+
+  </div>
+</div>

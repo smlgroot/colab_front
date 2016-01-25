@@ -1,0 +1,75 @@
+<div flex="65" style="padding-top:1em;">
+  <h1 style="padding:0 0 0 .5em;">Profile</h1>
+  <md-card style="margin-bottom:2em">
+    <md-card-content>
+      <div style="text-align:center;smargin-bottom:2em;padding-top:1em;cbackground-color:rgb(63, 81, 181);">
+        <img alt="me" class="md-avatar" ng-src="https://pbs.twimg.com/profile_images/2382443891/oe1dvhg8pja4gfbsh01e.png" style="border-radius: 10%;
+	-webkit-border-radius: 10%;
+	-moz-border-radius: 10%;height:10em;width:10em;"/>
+        <h1 style="scolor:white">{{user.firstname}}</h1>
+        <h2 style="color:rgb(109, 55, 176);">{{user.email}}</h2>
+      </div>
+    </md-card-content>
+  </md-card>
+  <md-card>
+    <md-card-content>
+      <md-content style="margin-bottom:0em;">
+        <md-list>
+          <md-list-item class="md-1-line md-long-text" ng-click="logout()">
+            <p>
+              <span style="font-weight:bolder;">2</span>
+              open projects</p>
+            <md-icon md-font-set="material-icons">chevron_right</md-icon>
+          </md-list-item>
+
+          <md-list-item class="md-1-line md-long-text" ng-click="logout()">
+            <p>
+              <span style="font-weight:bolder;">1
+              </span>
+              closed projects</p>
+            <md-icon md-font-set="material-icons">chevron_right</md-icon>
+          </md-list-item>
+
+          <md-list-item class="md-1-line md-long-text" ng-click="logout()">
+            <p>
+              <span style="font-weight:bolder;">77
+              </span>
+              closed projects</p>
+            <md-icon md-font-set="material-icons">chevron_right</md-icon>
+          </md-list-item>
+        </md-list>
+      </md-content>
+      <md-divider></md-divider>
+      <md-content style="margin-bottom:0em;">
+        <md-list>
+          <md-list-item class="md-1-line md-long-text" ng-click="logout()">
+            <p>
+              <span style="font-weight:bolder;">2</span>
+              followers</p>
+            <md-icon md-font-set="material-icons">chevron_right</md-icon>
+          </md-list-item>
+
+          <md-list-item class="md-1-line md-long-text" ng-click="logout()">
+            <p>
+              <span style="font-weight:bolder;">50
+              </span>
+              following</p>
+            <md-icon md-font-set="material-icons">chevron_right</md-icon>
+          </md-list-item>
+        </md-list>
+      </md-content>
+
+      <md-divider></md-divider>
+      <md-content>
+        <md-list>
+          <md-list-item class="md-1-line md-long-text" ng-click="logout()">
+            <p>logout</p>
+          </md-list-item>
+        </md-list>
+      </md-content>
+
+      <div class="md-button" ng-click="create()">create</div>
+      <div class="md-button" ng-click="load()">load</div>
+    </md-card-content>
+  </md-card>
+</div>

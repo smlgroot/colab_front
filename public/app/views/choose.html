@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-5" style="background-color:white;">
+    <div class="row" style="height:5em;line-height:5em;margin-bottom:1em;">
+      <h1 class="col-md-2" style="text-align:center;font-weight:bolder;sfont-size:2em;color:rgb(0, 32, 40)">Colab</h1>
+      <div class="col-md-4">
+        <md-button aria-label="Favorite" class="xmd-icon-button" flex ui-sref="profile"></md-button>
+        <md-button aria-label="Favorite" class="xmd-icon-button" flex ui-sref="projects.new"></md-button>
+        <md-button aria-label="Favorite" class="xmd-icon-button" flex ui-sref="projects"></md-button>
+      </div>
+    </div>
+    <div ui-view=""></div>
+  </div>
+  <div class="col-md-7">
+    <div ui-view="right"></div>
+  </div>
+</div>

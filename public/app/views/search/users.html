@@ -1,0 +1,30 @@
+<div class="" style="padding:.5em;">
+  <div class="row" style="">
+    <div class="col-md-4" ng-repeat="item in items track by $index" style="padding:0;height:250px;">
+      <div style="padding:.5em;height:250px;">
+        <div style="background-color:white;height:100%;overflow:hidden;">
+          <div class="row" style="margin:0;padding:0;">
+            <div class="col-md-4" style="margin:0;padding:0;">
+              <div style="padding:1em 0 0 0;;overflow:hidden;text-align:center;">
+                <img ng-src="https://unsplash.it/350/250/?image={{$index + 2 * 80}}" style="width:70px; height:70px;border-radius:10%"/>
+              </div>
+            </div>
+            <div class="col-md-8" style="margin:0;padding:0;">
+              <h4 style="font-weight:bolder;margin-top:1em;">{{item.name}}</h4>
+              <p style="sfont-size:1.2em;font-weight:bold;margin:0em 0 .5em 0;">
+                <span class="glyphicon glyphicon-blackboard" style="sfont-size:1.2em;padding:0 0em 0 0;"></span>
+                50
+                <span class="glyphicon glyphicon-gift" style="sfont-size:1.2em;padding:0 0em 0 .5em;"></span>
+                2
+              </p>
+            </div>
+          </div>
+          <div style="padding:1em;">
+            <p style="sfont-size:1.2em;stext-align:justify;">{{ item.description }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

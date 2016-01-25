@@ -1,0 +1,20 @@
+<div class="row" style="height:70em;">
+  <div class="col-md-10 col-md-offset-1" style="background-color:white;">
+    <div style="font-size:1.3em;">
+      <h1 style="margin:1em 0 .5em 0;font-weight:300;font-size:2.4em;">Publica un nuevo proyecto</h1>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Nombre de tu Proyecto</label>
+        <input class="form-control input-lg" ng-model="project.name">
+        <span class="help-block" style="font-size:1em;">Trata de escribir un nombre que describa
+          tu item de  manera facil y que se pueda entender.</span>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Descripcion de proyecto</label>
+        <textarea class="form-control input-lg" ng-model="project.description" rows="5"></textarea>
+      </div>
+      <div style="text-align:center;padding:2em 0;">
+        <button class="btn btn-primary btn-lg" ng-click="createProject()" style="width:40%;">Next</button>
+      </div>
+    </div>
+  </div>
+</div>
